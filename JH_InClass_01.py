@@ -33,7 +33,7 @@ try:
     dsList = arcpy.ListDatasets()
 
     # create a new .txt file
-    aFile = open(r"C:\Users\Jaime\Documents\School\Python\InClass_01\InClass_01.txt", "w")
+    aFile = open(r"C:\Users\Jaime\Documents\School\Python\InClass_01\InClass_01_Output.txt", "w")
 
     # list to store unprojected FCs
     unProjectedFC = []
