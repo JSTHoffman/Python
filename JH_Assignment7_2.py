@@ -6,7 +6,7 @@
 import arcpy
 
 # set environment properties
-aws = r"C:\Users\Jaime\Documents\School\Python\Assignment7\LandParcels.gdb"
+aws = r"Z:\2016S\Python\Assignment7\LandParcels.gdb"
 arcpy.env.workspace = aws
 arcpy.env.overwriteoutput = True
 
@@ -28,8 +28,7 @@ try:
 			]
 
 	# open a text file to write answers 
-	aFile = open(r"C:\Users\Jaime\Documents\School\Python\Assignment7"
-													"\Assignment_07.txt", "w")
+	aFile = open(r"Z:\2016S\Python\Assignment7\Assignment_07.txt", "w")
 
 	# start with question A
 	qNum = 1
@@ -82,7 +81,7 @@ try:
 				'UseCode IN(\'GOV\', \'CITY\', \'CITYV\', \'CITYW\')',
 				'UseCode = \'F1\'',
 				'UseCode = \'F2\'',
-				'UseCode IN( \'POS\', \'PRK\', \'PROW\')'
+				'UseCode IN( \'POS\', \'PRK\', \'PROW\')',
 				'UseCode = \'SCH\'',
 				'UseCode = \'UTIL\'',
 				'UseCode = \'VAC\''
@@ -106,6 +105,8 @@ try:
 
 	# loop through expression list
 	for anExp in expList:
+
+		print counter
 
 		# create a cursor with the expression
 		with arcpy.da.UpdateCursor(featureClass, fields, anExp) as aCursor:
